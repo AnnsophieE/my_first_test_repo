@@ -1,5 +1,5 @@
 mydata = read.csv("example_data.csv")
-plot(mydata$xdata,mydata$ydata)
+plot(mydata$xdata,mydata$ydata, col = "red")
 # some guesses for the parameters.
 p1 = 1
 p2 = 0.2
@@ -10,5 +10,5 @@ fit = nls(ydata ~ p1*cos(p2*xdata) + p2*sin(p1*xdata), data = mydata, start = li
 #Plot the fitted line
 new = data.frame(xdata = seq(min(mydata$xdata),max(mydata$xdata),len=200))
 lines(new$xdata,predict(fit,newdata=new))
-plot(mydata$xdata,mydata$ydata, col = "red")
+
 
